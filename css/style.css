@@ -1,1 +1,638 @@
+/* -------------------- */
+/* RESET                */
+/* -------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: "Inter", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.25s, color 0.25s;
+}
+
+/* -------------------- */
+/* THEME VARIABLES      */
+/* -------------------- */
+:root {
+    --bg: #f5f5f5;
+    --text: #222;
+    --header-bg: rgba(255, 255, 255, 0.7);
+    --nav-bg: rgba(255, 255, 255, 0.9);
+    --accent: #7f5af0;
+}
+
+.dark {
+    --bg: #0d1117;
+    --text: #e6edf3;
+    --header-bg: rgba(13, 17, 23, 0.8);
+    --nav-bg: rgba(22, 27, 34, 0.9);
+}
+
+/* -------------------- */
+/* CONTAINERS           */
+/* -------------------- */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* -------------------- */
+/* HEADER               */
+/* -------------------- */
+.header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    background: var(--header-bg);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+/* -------------------- */
+/* LOGO                 */
+/* -------------------- */
+.logo {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+.logo span {
+    color: var(--accent);
+}
+
+.logo a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+/* -------------------- */
+/* DESKTOP NAV          */
+/* -------------------- */
+.desktop-nav {
+    display: flex;
+    gap: 25px;
+}
+
+.desktop-nav a {
+    text-decoration: none;
+    font-size: 16px;
+    color: var(--text);
+    transition: 0.25s;
+}
+
+.desktop-nav a:hover,
+.desktop-nav a.active {
+    color: var(--accent);
+}
+
+/* -------------------- */
+/* BURGER               */
+/* -------------------- */
+.burger {
+    display: none;
+    flex-direction: column;
+    width: 28px;
+    height: 22px;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.burger span {
+    width: 100%;
+    height: 3px;
+    background: var(--text);
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+/* -------------------- */
+/* MOBILE NAV           */
+/* -------------------- */
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.mobile-nav a {
+    text-decoration: none;
+    padding: 12px 20px;
+    display: block;
+    color: var(--text);
+    font-size: 18px;
+}
+
+.mobile-nav a:hover,
+.mobile-nav a.active {
+    color: var(--accent);
+}
+
+/* -------- BURGER ACTIVE -------- */
+.burger.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(9px);
+}
+
+.burger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-9px);
+}
+
+/* -------------------- */
+/* THEME BUTTON         */
+/* -------------------- */
+.theme-toggle {
+    width: 28px;
+    height: 28px;
+    background: var(--text);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+/* -------------------- */
+/* SECTIONS             */
+/* -------------------- */
+.section {
+    padding: 80px 0;
+    text-align: center;
+    background: var(--bg);
+}
+
+.section h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.section p {
+    font-size: 20px;
+    opacity: 0.85;
+}
+
+/* -------------------- */
+/* MOBILE ADAPTATION    */
+/* -------------------- */
+@media (max-width: 900px) {
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .mobile-nav {
+        display: none;
+    }
+
+    .mobile-nav.open {
+        display: flex;
+    }
+}
+
+footer {
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* ============================
+   ABOUT SECTION
+============================ */
+
+.about-section {
+    padding: 60px 0;
+    background: var(--bg);
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.section-title span {
+    color: #8855FF;
+}
+
+/* Основная обёртка */
+.about-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    background: var(--bg);
+}
+
+/* Фото */
+.about-photo {
+    flex: 0 0 300px;
+}
+
+.about-photo img {
+    width: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Правый блок */
+.about-info {
+    flex: 1;
+    max-width: 600px;
+}
+
+.about-name {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.about-text {
+    margin-bottom: 18px;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Заголовки внутри секции */
+.sub-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 25px 0 15px;
+}
+
+/* Списки */
+.about-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+.about-list li {
+    margin-bottom: 8px;
+    padding-left: 18px;
+    position: relative;
+}
+
+.about-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 20px;
+    line-height: 16px;
+    color: var(--accent, #4b78ff);
+}
+
+/* ---------------------
+   КНОПКА СВЯЗАТЬСЯ
+---------------------- */
+
+.contact-main-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent, #4b78ff);
+    color: #fff;
+    padding: 14px 26px;
+    border-radius: 12px;
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 25px;
+    transition: 0.3s ease;
+}
+
+.contact-main-btn:hover {
+    background: var(--accent-hover, #3a61d8);
+    transform: translateY(-2px);
+}
+
+.contact-main-btn i {
+    font-size: 18px;
+}
+
+/* ---------------------
+   СОЦ. КНОПКИ
+---------------------- */
+
+.social-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+    background: var(--bg);
+}
+
+.social-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #fff;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+/* Цвета соцсетей */
+.social-btn.vk { background: #4c75a3; }
+.social-btn.whatsapp { background: #25d366; }
+.social-btn.telegram { background: #0088cc; }
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.15);
+}
+
+/* ============================
+   АДАПТИВ
+============================ */
+
+@media (max-width: 900px) {
+    .about-wrapper {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .about-wrapper {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-photo {
+        flex: unset;
+        width: 80%;
+        max-width: 320px;
+    }
+
+    .about-info {
+        max-width: 100%;
+    }
+
+    .about-list li {
+        text-align: left;
+    }
+
+    .social-buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-photo {
+        width: 90%;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .about-name {
+        font-size: 22px;
+    }
+}
+
+/* ---------------------------
+   HERO
+----------------------------*/
+.hero {
+    padding: 80px 20px 50px;
+    background: linear-gradient(135deg, #8855FF15, #8855FF05);
+}
+
+.hero-title {
+    font-size: 34px;
+    font-weight: 800;
+}
+
+.hero-title span {
+    color: #8855FF;
+}
+
+.hero-subtitle {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #555;
+}
+
+
+/* ----------------------------- */
+/* 🔥 БАЗОВАЯ ПЛАВНОСТЬ САЙТА    */
+/* ----------------------------- */
+
+* {
+    transition: all 0.25s ease;
+}
+
+/* Плавное появление страницы */
+body {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+body.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ----------------------------- */
+/* ✨ АНИМАЦИЯ ВХОДА БЛОКОВ      */
+/* ----------------------------- */
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.7s ease-in-out;
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+/* ----------------------------- */
+/* 🟣 АНИМАЦИИ ДЛЯ КАРТОЧЕК      */
+/* ----------------------------- */
+
+.card-animated {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(.17,.67,.43,1.42);
+}
+
+.card-animated.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-animated:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 8px 30px rgba(119, 0, 255, 0.25);
+}
+
+/* ----------------------------- */
+/* 🔵 КНОПКИ — ПАРЕНИЕ И СВЕТ   */
+/* ----------------------------- */
+
+.btn-glow {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-glow:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 18px rgba(149, 0, 255, 0.4);
+}
+
+/* Световой эффект изнутри */
+.btn-glow::after {
+    content: "";
+    position: absolute;
+    top: 0; left: -120%;
+    width: 120%; height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.35), transparent);
+    transform: skewX(-20deg);
+}
+
+.btn-glow:hover::after {
+    left: 120%;
+    transition: left 0.6s ease;
+}
+
+/* ----------------------------- */
+/* 🌫 ЛЁГКИЙ ПАРАЛЛАКС HERO      */
+/* ----------------------------- */
+
+.hero-parallax {
+    transition: transform 0.4s ease-out;
+}
+
+.hero-parallax:hover {
+    transform: translateY(-4px);
+}
+
+/* Основной блок */
+.prompt-section {
+    max-width: 680px;
+    margin: 40px auto 0;
+    padding: 0 20px;
+}
+
+/* Внутренняя коробка */
+.prompt-box {
+    background: var(--bg-secondary);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.06);
+    margin-bottom: 18px;
+}
+
+/* Узкая плашка файла */
+.file-strip {
+    width: 100%;
+    padding: 6px 18px;
+    background: var(--bg-secondary);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.3s ease;
+}
+
+.file-strip:hover {
+    background: var(--bg-hover);
+}
+
+.file-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+.file-info i {
+    font-size: 1.1rem;
+    color: var(--accent);
+}
+
+/* Кнопка маленькой скачки справа */
+.file-download {
+    background: var(--accent);
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: #000;
+    font-size: 1.1rem;
+
+    display: flex;
+    align-items: center;
+    transition: 0.3s ease;
+}
+
+.file-download:hover {
+    transform: translateY(-2px);
+}
+
+.badge-new {
+    background: var(--accent);
+    color: #000;
+    font-size: 0.7rem;
+    font-weight: 700;
+
+    padding: 2px 7px;
+    border-radius: 6px;
+    margin-left: 8px;
+
+    animation: newPulse 1.6s infinite ease-in-out;
+}
+
+/* Лёгкая пульсация чтобы акцентировать, без вырвиглаза */
+@keyframes newPulse {
+    0% { opacity: 0.65; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.09); }
+    100% { opacity: 0.65; transform: scale(1); }
+}
