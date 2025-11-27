@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DushessDev — Главная</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container header-container">
+
+        <div class="logo">
+            <a href="index.html#home">Dushess<span>Dev</span></a>
+        </div>
+
+        <nav class="nav desktop-nav">
+            <a href="index.html#home" class="active">Главная</a>
+            <a href="about.html">Обо мне</a>
+            <a href="projects.html">Проекты</a>
+            <a href="programs.html">Программы</a>
+        </nav>
+
+        <button class="burger" id="burgerBtn">
+            <span></span><span></span><span></span>
+        </button>
+
+        <button class="theme-toggle" id="themeToggle"></button>
+
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="index.html#home" class="active">Главная</a>
+        <a href="about.html">Обо мне</a>
+        <a href="projects.html">Проекты</a>
+        <a href="programs.html">Программы</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero hero-parallax">
+    <div class="container">
+        <h1 class="hero-title">
+            Добро пожаловать на <br><span>DUSHESS-DEV</span>
+        </h1>
+        <p class="hero-subtitle">Промпты для AI • программы • проекты</p>
+    </div>
+</section>
+
+<section class="prompt-section fade-up" id="prompt">
+    <div class="prompt-box">
+        <h2>Мой промпт - <span style="color: var(--accent);">OMEGA</span></h2>
+        <p>Анлок для DeepSeek и Qwen.</p>
+    </div>
+
+    <!-- Узкая плашка файла -->
+    <div class="file-strip">
+        <div class="file-info">
+            <i class="fa-solid fa-file-lines"></i>
+            <span>OMEGA.md</span>
+            
+            <span class="badge-new">NEW</span>
+        </div>
+
+        <a href="files/OMEGA.md" download class="file-download">
+            <i class="fa-solid fa-download"></i>
+        </a>
+    </div>
+</section>
+
+<script src="js/main.js"></script>
+</body>
+</html>

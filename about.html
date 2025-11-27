@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обо мне — DUSHESS-DEV</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="container header-container">
+
+        <div class="logo">
+            <a href="index.html">Dushess<span>Dev</span></a>
+        </div>
+
+        <nav class="nav desktop-nav">
+            <a href="index.html">Главная</a>
+            <a href="about.html" class="active">Обо мне</a>
+            <a href="projects.html">Проекты</a>
+            <a href="programs.html">Программы</a>
+        </nav>
+
+        <button class="burger" id="burgerBtn"><span></span><span></span><span></span></button>
+
+        <button class="theme-toggle" id="themeToggle"></button>
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="index.html">Главная</a>
+        <a href="about.html" class="active">Обо мне</a>
+        <a href="projects.html">Проекты</a>
+        <a href="programs.html">Программы</a>
+    </nav>
+</header>
+
+<section id="about" class="about-section">
+    <div class="container">
+        
+        <h1 class="section-title">
+            Информация <br><span>Обо мне</span>
+        </h1>
+
+        <div class="about-wrapper">
+
+            <!-- Фото -->
+            <div class="about-photo fade-up">
+                <img src="img/me.jpg" alt="Андрей Никифоров">
+            </div>
+            
+
+            <!-- Правый блок -->
+            <div class="about-info fade-up">
+                <h3 class="about-name">Никифоров Андрей Андреевич</h3>
+
+                <p class="about-text">
+                    Самозанятый разработчик и энтузиаст цифровых технологий. 
+                    Занимаюсь созданием современных веб-сайтов, интерфейсов, 
+                    интерактивных элементов и удобных пользовательских решений. 
+                    Работаю как на Front-end, так и на Back-end, что позволяет 
+                    полностью контролировать разработку: от идеи и дизайна до 
+                    готового продукта.
+                </p>
+
+                <p class="about-text">
+                    Помимо веб-разработки, активно интересуюсь: 
+                    автоматизацией и ремонтом цифровой техники. 
+                    В планах создание собственной ОС и кастомизация других ОС.
+                </p>
+
+                <h4 class="sub-title">Чем я занимаюсь</h4>
+                <ul class="about-list">
+                    <li>Разработка сайтов любой сложности</li>
+                    <li>Создание адаптивных интерфейсов</li>
+                    <li>HTML / CSS / JavaScript / Bootstrap</li>
+                    <li>Back-end на PHP и Python</li>
+                    <li>Оптимизация скорости работы</li>
+                    <li>Ремонт и обслуживание техники</li>
+                </ul>
+
+                <h4 class="sub-title">Навыки</h4>
+                <ul class="about-list">
+                    <li><strong>HTML</strong> — эксперт</li>
+                    <li><strong>CSS</strong> — уверенный средний</li>
+                    <li><strong>JavaScript</strong> — хороший базовый</li>
+                    <li><strong>PHP</strong> — уверенный базовый</li>
+                    <li><strong>Python</strong> — отличный базовый</li>
+                    <li>Bootstrap, jQuery, GSAP, LazyLoad</li>
+                </ul>
+
+                <!-- Большая кнопка связаться -->
+                <a href="tel:+79951264168" class="contact-main-btn btn-glow">
+                    <i class="fa-solid fa-phone"></i> Связаться
+                </a>
+
+                <!-- Ряд кнопок соцсетей -->
+                <div class="social-buttons">
+                    <a href="https://vk.com/dushess_andrey" 
+                       target="_blank" class="social-btn vk">
+                        <i class="fa-brands fa-vk"></i>
+                    </a>
+
+                    <a href="https://wa.me/79951264168" 
+                       target="_blank" class="social-btn whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+
+                    <a href="https://t.me/dushess_andrey" 
+                       target="_blank" class="social-btn telegram">
+                        <i class="fa-brands fa-telegram"></i>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<footer>© DushessDev, 2025</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
