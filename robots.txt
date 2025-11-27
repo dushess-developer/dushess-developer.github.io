@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dushess-developer.github.io/sitemap.xml
