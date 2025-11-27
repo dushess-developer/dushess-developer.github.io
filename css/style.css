@@ -617,6 +617,17 @@ body.loaded {
     transform: translateY(-2px);
 }
 
+.badge-version {
+    background: var(--accent);
+    color: #000;
+    font-size: 0.7rem;
+    font-weight: 700;
+
+    padding: 2px 4px 2px 4px;
+    border-radius: 6px;
+    margin-left: 8px;
+}
+    
 .badge-new {
     background: orange;
     color: #000;
@@ -629,16 +640,6 @@ body.loaded {
 
     animation: newPulse 1.6s infinite ease-in-out;
 }
-
-.badge-version {
-    background: var(--accent);
-    color: #000;
-    font-size: 0.7rem;
-    font-weight: 700;
-
-    padding: 2px 7px;
-    border-radius: 6px;
-    margin-left: 8px;
 
 /* Лёгкая пульсация чтобы акцентировать, без вырвиглаза */
 @keyframes newPulse {
